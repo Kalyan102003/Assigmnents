@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Calculator</title>
+    <style>
+       
+        body, html {
+            margin: 0;
+            padding: 0;
+        }
+
+        .bg-img {
+            background-image: url("https://img.freepik.com/free-photo/top-view-calculator-with-copyspace_23-2148198116.jpg");
+            background-size: cover;
+            height: 100vh;
+        }
+
+        .input {
+            height: 40px;
+            width: 350px;
+            border-radius: 15px;
+            border-color: rgb(250, 250, 250);
+            border-width: 2px;
+            background: rgb(255, 255, 255);
+        }
+
+        .container1 {
+            text-align: center;
+            margin: auto 0;
+            padding: 2px;
+        }
+
+        .head {
+            text-align: center;
+            margin: auto 0;
+            padding: 50px;
+            font-family: "Roboto";
+            font-size: 70px;
+            color: #013596;
+            text-decoration: underline;
+        }
+
+        .check-button {
+            background: rgb(103, 209, 4);
+            border-radius: 10px;
+            border-width: 1px;
+            height: 30px;
+            width: 150px;
+            color: aliceblue;
+            font-size: 20px;
+        }
+
+        .output {
+            font-size: 40px;
+            color: #000000;
+            border-color: black;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-img">
+        <h1 class="head">Age Calculator</h1>
+        <div class="container1">
+            <input class="input" id="name" type="input" placeholder="Enter your name">
+            <br><br>
+            <input class="input" id="age" type="input" placeholder="Enter your age in (YYYY-MM-DD)">
+            <br><br>
+            <button class="check-button" id="okay">Check</button>
+            <h2 class="output" id="show_age"></h2>
+        </div>
+    </div>
+
+    <script>
+       
+        window.onload = function() {
+            let naming = document.getElementById("name");
+            let aging = document.getElementById("age");
+            let checked = document.getElementById("okay");
+
+            checked.addEventListener("click", function() {
+                let output = document.getElementById("show_age");
+                let dob = new Date(aging.value);
+                let now = new Date();
+                if (isNaN(dob.getTime())) {
+                    output.textContent = "Invalid Date Of Birth";
+                } else {
+                    let age_milli = now - dob;
+                    let age_years = age_milli / (1000 * 60 * 60 * 24 * 365.25);
+                    age_years = Math.floor(age_years);
+                    output.textContent = "Hi, " + naming.value + ", your age is " + age_years;
+                }
+            });
+        }
+    </script>
+</body>
+</html>
