@@ -1,0 +1,50 @@
+
+body, html {
+    margin: 0;
+    padding: 0;
+}
+.bg-img{
+  background-image: url("https://img.freepik.com/free-photo/top-view-calculator-with-copyspace_23-2148198116.jpg");
+  background-size: cover;
+  height:100vh
+}
+.input{
+    height: 40px;
+    width:350px;
+    border-radius: 15px;
+    border-color: rgb(250, 250, 250);
+    border-width: 2px;
+   background: rgb(255, 255, 255);
+
+}
+.container1{
+    text-align: center;
+    margin:auto 0;
+    padding:2px;
+}
+.head{
+    text-align: center;
+    margin:auto 0; 
+    padding: 50px;
+    font-family:"Roboto";
+    font-size:70px;
+    color:#013596;
+    text-decoration: underline;
+}
+.check-button{
+    background:rgb(103, 209, 4);
+    border-radius: 10px;
+    border-width: 1px;
+    height: 30px;
+    width:150px;
+    color:aliceblue;
+    font-size: 20px;
+}
+.output{
+ font-size: 4 0px;
+ color:#000000;
+ 
+ border-color: black;
+ font-family: Georgia, 'Times New Roman', Times, serif;
+ 
+}
