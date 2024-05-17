@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 netflix.in</title>
+    <style>
+        .image {
+            position: relative;
+            height: 100vh;
+            background-image: url("https://raw.githubusercontent.com/thatanjan/netflix-clone-yt/youtube/media/banner.jpg");
+            background-size: cover;
+            background-position: center;
+            overflow: hidden;
+        }
+
+        .dark-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Black color with 50% opacity */
+        }
+
+        .content {
+            position: relative;
+            z-index: 1; /* Ensure the content is above the dark overlay */
+            color: white; /* Text color */
+            padding: 20px;
+        }
+
+       #drop_down{
+        background-color: rgba(0, 0, 0, 0.507);
+        margin-top: 20px;
+        height:30px;
+        width:100px;
+        color:white;
+        text-align: center;
+        position:absolute;
+        right:100px
+        
+       }
+       #signBtn{
+        margin-top: 20px;
+        position: absolute;
+        right:10px;
+        background-color: red;
+        color:white;
+        border-width: 0px;
+        border-radius:4px;
+        height:30px;
+        text-align: center;
+        width:80px;
+        font-weight: 700;
+       }
+      .unlimited{
+       text-align: center;
+        margin-top:150px;
+        
+        font-size: 40px;
+        font-weight: bolder;
+        font-family: sans-serif; 
+    }
+      .para{
+        
+        font-size: 20px;
+        font-weight:500;
+        text-align: center;
+      }
+      .logo{
+        height:110px;
+        width: 180px;
+      }
+      .input{
+        height:50px;
+        width:400px;
+        background-color: rgba(0, 0, 0, 0.301);
+        border-width: 1px;
+        border-color: white;
+        border-radius: 4px;
+        color:white;
+      }
+      .get_start_btn{
+        height: 50px;
+        width:15 0px;
+        background-color: red;
+        color: white;
+        border-width: 0px;
+        font-weight: bold;
+        border-radius: 6px;
+        margin:4px;
+        font-size:20px;
+        
+      }
+    </style>
+</head>
+<body>
+    <div class="image"> 
+        <div class="dark-overlay"></div> 
+        <div class="container content">
+            <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/f/fd/Netflix-Logo.png"></img>
+                <select id="drop_down">
+                    <option value="English">English</option>
+                    <option value="Telugu">Telugu</option>
+                    <option value="Hindi">Hindi</option>
+                </select>
+                <button id="signBtn">Sign in</button>
+            
+                <h1 class="unlimited">Unlimited movies, TV shows, and more</h1>
+                <p class="para">Watch Anywhere. Cancel Anytime.</p>
+                <p class="para">Ready to watch? Enter your email to create or restart your membership</p>
+            
+            <div style="text-align: center;">
+                <input class="input" type="input" placeholder="Email Address">
+                <button class="get_start_btn">Get Started </button> 
+            </div>
+        </div>
+    </div>
+</body>
+</html>
