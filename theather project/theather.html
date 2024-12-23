@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theather seat booking</title>
+    <link rel="styleSheet" href="theather.css">
+</head>
+<body>
+    <div class="maincontainer" id="maincontainer">
+        <div class="banner"></div> 
+
+        <a href="./booking.html">
+            <button class="BackButn">Back</button>
+        </a>
+        <div class="screen">Screen</div>
+            <div class="seatscontaniner">
+        <div class="rs100"> 100/-
+                <div class="seatss seats1">
+                    <div class="seats" seat1="1">1</div>
+                    <div class="seats seat2">2</div>
+                    <div class="seats seat3">3</div>
+                    <div class="seats seat4">4</div>
+                    <div class="seats seat5">5</div>
+                    <div class="seats seat6">6</div>
+                    <div class="seats seat7">7</div>
+                    <div class="seats seat8">8</div>
+                    <div class="seats seat9">9</div>
+                </div>
+                <div class="seatss seats2">
+                    <div class="seats seat10">10</div>
+                    <div class="seats seat11">11</div>
+                    <div class="seats seat12">12</div>
+                    <div class="seats seat13">13</div>
+                    <div class="seats seat14">14</div>
+                    <div class="seats seat15">15</div>
+                    <div class="seats seat16">16</div>
+                    <div class="seats seat17">17</div>
+                    <div class="seats seat18">18</div>
+                </div>
+        </div>
+
+        <div class="rs200"> 200/-
+                <div class="seatss seats3">
+                    <div class="seats seat19">19</div>
+                    <div class="seats seat20">20</div>
+                    <div class="seats seat21">21</div>
+                    <div class="seats seat22">22</div>
+                    <div class="seats seat23">23</div>
+                    <div class="seats seat24">24</div>
+                    <div class="seats seat25">25</div>
+                    <div class="seats seat26">26</div>
+                    <div class="seats seat27">27</div>
+                </div>
+                <div class="seatss seats4">
+                    <div class="seats seat28">28</div>
+                    <div class="seats seat29">29</div>
+                    <div class="seats seat30">30</div>
+                    <div class="seats seat31">31</div>
+                    <div class="seats seat32">32</div>
+                    <div class="seats seat33">33</div>
+                    <div class="seats seat34">34</div>
+                    <div class="seats seat35">35</div>
+                    <div class="seats seat36">36</div>
+                </div>
+                <div class="seatss seats5">
+                    <div class="seats seat37">37</div>
+                    <div class="seats seat38">38</div>
+                    <div class="seats seat39">39</div>
+                    <div class="seats seat40">40</div>
+                    <div class="seats seat41">41</div>
+                    <div class="seats seat42">42</div>
+                    <div class="seats seat43">43</div>
+                    <div class="seats seat44">44</div>
+                    <div class="seats seat45">45</div>
+                </div>
+                <div class="seatss seats6">
+                    <div class="seats seat46">46</div>
+                    <div class="seats seat47">47</div>
+                    <div class="seats seat48">48</div>
+                    <div class="seats seat49">49</div>
+                    <div class="seats seat50">50</div>
+                    <div class="seats seat51">51</div>
+                    <div class="seats seat52">52</div>
+                    <div class="seats seat53">53</div>
+                    <div class="seats seat54">54</div>
+                </div>
+        </div>
+            </div>
+            <div>
+                <div class="proceed">
+                    <div class="proceed-container">
+                        count:<span class="count">0</span>
+                    </div>
+                    <div class="amount">Total Amount: <span class="total">00</span></div>
+                    <button class="proceedButn">proceed</button>
+                </div>
+                
+            </div>
+        </div>
+        <div class="overlay" id="overlay"></div>
+        <div class="popup" id="popup">
+            <span class="close-btn" id="closePopup">&times;</span>
+            <img id="popupImage" src="" alt="Movie Poster">
+            <h2 class="seatt">seat no: <span class="seatNum"></span></h2>
+            <div class="price" id="popupPrice">Price:<span class="pricee"></span> </div>
+            <button id="paymentButton" class="btn btn-success">Proceed to Payment</button>
+        </div>
+        
+    </div>
+    <script>
+        let seatno = []
+        let seats = document.querySelectorAll(".seats");
+        let price = document.querySelector(".pricee")
+        let seatNum = document.querySelector(".seatNum")
+        let count = 0;
+        let totalAmunt = 0;
+        let counter = document.querySelector(".count");
+        let total = document.querySelector(".total");
+        let proceed = document.querySelector(".proceedButn")
+        const popup = document.getElementById("popup");
+        const overlay = document.getElementById("overlay");
+        const closePopup = document.getElementById("closePopup");
+        const popupImage = document.getElementById("popupImage");
+        const popupPrice = document.getElementById("popupPrice");
+        const paymentButton = document.getElementById("paymentButton");
+        const imageSrc = sessionStorage.getItem('clickedImage');
+seats.forEach((seat)=>{ 
+    seat.addEventListener("click",()=>{    
+        if(seat.classList.contains("clicked")){
+            count--;
+            seat.classList.remove("clicked");
+            const price = parseInt(seat.closest(".rs100, .rs200").classList[0].replace("rs",""));
+            totalAmunt-=price;
+            const index = seatno.indexOf(seat.textContent.trim());
+            if (index > -1) seatno.splice(index, 1);
+        }
+        else{
+            count+=1;
+            seat.classList.add("clicked");
+           const price = parseInt(seat.closest(".rs100, .rs200").classList[0].replace("rs",""));
+           totalAmunt+=price;
+           seatno.push(seat.textContent.trim());
+        }
+        counter.textContent = count;
+        total.textContent = totalAmunt;
+    });
+});
+
+proceed.addEventListener("click", () => {     
+            popup.style.display = "block";
+            overlay.style.display = "block";
+            popupImage.src = imageSrc;
+            seatNum.textContent = seatno.join(", "); 
+            price.textContent = totalAmunt;
+        });
+
+        closePopup.addEventListener("click", () => {
+            popup.style.display = "none";
+            overlay.style.display = "none";
+        });
+
+        paymentButton.addEventListener("click", () => {
+            alert("Proceeding to Payment...");
+        });
+
+        overlay.addEventListener("click", () => {
+            popup.style.display = "none";
+            overlay.style.display = "none";
+        });
+
+    </script>
+</body>
+
+</html>

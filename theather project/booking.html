@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking</title>
+    <link rel="styleSheet" href="booking.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+<body>
+    <div>
+    <div class="moviesContainer">
+        <div class="banner"></div> 
+        </div>
+        <div class="Movies">
+        <div class="moviescontainer1">
+                <a href="theather.html">
+                <img class="img1 imgs" src="https://lumiere-a.akamaihd.net/v1/images/p_disneymovies_mufasa_poster_v1_eb23f7a5.jpeg" alt="hi1">
+                <img class="img2 imgs" src="https://i.pinimg.com/736x/e4/22/e2/e422e2f3f5c647b6d3da488f6e8dd9ec.jpg" alt="hi1">
+            </a> 
+        </div>
+        <div class="moviescontainer2">
+            <a href="theather.html">
+            <img class="img3 imgs" src="https://m.media-amazon.com/images/M/MV5BZTgyYjk5YzMtMjA0Yi00MzIzLWE3NTQtMzQyMGFmYmNlZDI4XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="hi3" >
+            <img class="img4 imgs" src="https://m.media-amazon.com/images/M/MV5BYzM1YjUwNjEtN2M2Yi00YTY4LWJmMDYtNWU2YWNiZmI0ZWYzXkEyXkFqcGc@._V1_.jpg" alt="hi4">
+        </a> 
+        </div>
+    </div>
+        <div class="movies">
+        <div class="moviescontainer3">
+            <a href="theather.html">
+            <img class="img5 imgs" src="https://img.ap7am.com/froala-uploads/20241017fr6710ac0068685.jpg" alt="hi3" >
+            <img class="img6 imgs" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS72KJFiJzCc5ta0lc94einqCyJSfm2Jw-Zhg&s" alt="hi4">
+        </a> 
+        </div>
+        <div class="moviescontainer4">
+            <a href="theather.html">
+            <img class="img5 imgs" src="https://m.media-amazon.com/images/M/MV5BNzQ4MjBiODEtMGVmZS00M2IxLWEzNWUtZmI3Y2VjMTdlYTUxXkEyXkFqcGc@._V1_.jpg" alt="hi3" >
+            <img class="img6 imgs" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqPYWbPhv53ez8VqlwCz7kzNzxscKOQqX0lg&s" alt="hi4">
+        </a> 
+        </div>
+</div>  
+    </div>
+    <div class="text">
+        Watch Your Fav movie! 
+        Grab your tickets now
+    </div>
+
+    
+    <script>
+        let images = document.querySelectorAll(".imgs");
+        images.forEach((image)=>{
+            image.addEventListener("click",()=>{
+                let sessions =sessionStorage.setItem('clickedImage', image.src);
+                console.log(sessions);
+                // windo.open("theather.html")
+            })
+        })
+    </script>
+</body>
+</html>

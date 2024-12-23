@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "express": "^4.21.2"
+  },
+  "name": "theather-project",
+  "version": "1.0.0",
+  "main": "theather.js",
+  "type": "module",
+  "devDependencies": {},
+  "scripts": {
+    "start": "node theather"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

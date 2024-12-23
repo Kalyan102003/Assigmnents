@@ -1,0 +1,219 @@
+.BackButn{
+    position: absolute;
+    z-index: 2;
+    height: 40px;;
+    width: 100px;
+    margin-top: 30px;
+    background-color: red;
+}
+.maincontainer{
+        background-image: url("./banner.jpg");
+            background-size: cover;
+            top: 0;
+            left: 0;
+            background-position: center;
+            position: absolute;
+            width:100%;
+            height:max-content;
+            top: 0;
+            left: 0;
+            margin: 0;
+}
+.banner {
+    background-color: rgba(0, 0, 0, 0.5); 
+    position: absolute;
+     top: 0;
+    left: 0; 
+    width: 100%;
+    height: 100%; 
+   
+}
+.screen{
+    font-size: 30px;
+    border-color: black;
+    font-weight: bold;
+    font-family:sl, sans-serif;
+    height:70px;
+    color: #ffffff;
+    width: 1000px;
+    border: 1px solid #ccc;
+    background-color: rgba(128, 128, 128, 0);
+    text-align: center;
+    padding-top:20px;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom:30px;
+    border-radius: 5px;
+    position: relative;
+   
+}
+
+.seatscontaniner{
+    
+    height: fit-content;
+    width:1000px;
+    margin: auto;
+    border-radius: 5px;
+    border: 3px solid #ffffff;
+}
+
+.seatss{
+    cursor: pointer;
+    height: 70px;
+    width:950px;
+    margin:auto;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.seats1,.seats2,.seats3,.seats4,.seats5,.seats6{
+
+    margin:10px;
+    display:inline-flex
+}
+
+.seats{
+    background-color: rgb(39, 39, 230);
+   margin:auto;
+    margin:10px;
+    height:50px;
+    width:80px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   border-radius: 5px;
+}
+
+
+
+.seats.clicked {
+    background-color: rgb(21, 255, 0); 
+    color: whitesmoke; 
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.seats:hover{
+   background-color:lightblue;
+}
+.proceed{
+    color:white;
+    display: flex;
+    align-items: center;
+    height:80px;
+    width:1000px;
+    justify-content: space-between;
+    margin:auto;
+    margin-top:10px;
+    border:1px solid #ffffff;
+   
+    position:relative;
+}
+.proceed-container{
+    margin:10px;
+    padding-left:10px;
+    font-size: 30px;
+    font-weight: bolder;
+}
+button{
+    background-color: blue;
+    color:#ffffff;
+    border:0px;
+    border-radius:20px;
+    height:50px;
+    width:180px;
+    margin:10px;
+    cursor:pointer;
+    font-size:20px;
+}
+.rs100,.rs200{
+    position: relative;
+    text-align:center;
+    font-size:30px;
+    padding:10px;
+    color: #ffffff;
+    font-weight: bold;
+    
+}
+.amount,.proceed-container{
+    font-size:30px;
+    font-weight: bolder;
+    background-color: blue;
+    padding: 10px;
+    border-radius: 5px;
+    max-width: max-content;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 400px;
+    /* background-image: url("http://surl.li/aapnxm"); */
+    /* background-size: cover; */
+    background: #ffffffbe;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+}
+#paymentButton{
+    background-color: green;
+    margin: auto;
+    margin-left: 40%;
+    margin-top: 15px;
+}
+
+.popup img {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    margin-bottom: 20px;
+}
+
+.popup  {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-family: sans-serif;
+
+}
+
+.popup .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    color: black;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+#popupImage{
+    height:200px;
+    width:200px;
+   margin-left: 25%;
+}
+.price,.seatt{
+text-align: center;
+font-size: 30px;
+font-weight: bold;
+font-family: sans-serif;
+margin: 0px;
+}
+
